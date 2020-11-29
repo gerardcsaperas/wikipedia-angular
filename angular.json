@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular-wikipedia"
+  "defaultProject": "angular-wikipedia",
+  "cli": {
+    "analytics": false
+  }
 }
