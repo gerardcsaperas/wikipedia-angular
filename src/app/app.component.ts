@@ -11,9 +11,12 @@ export class AppComponent {
     private wikipedia: WikipediaService
   ) {}
 
-  results: Object;
+  results;
 
   async fetchTerm(term: string) {
-    this.results = await this.wikipedia.search(term);
+    this.wikipedia.search(term).subscribe( response => {
+      console.log(response);
+      this.results = response;
+    });
   }
 }

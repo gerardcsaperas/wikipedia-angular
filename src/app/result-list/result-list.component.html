@@ -1,4 +1,7 @@
 <ng-container *ngIf="results">
-    <p *ngFor="let result of results.query.search">{{ result.title }}</p>
+    <div *ngFor="let result of results.query.search">
+        <p>{{ result.title }}</p>
+        {{ result.snippet | cleanStringTags }}
+    </div>
 </ng-container>
 
