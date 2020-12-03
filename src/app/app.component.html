@@ -1,2 +1,7 @@
-<app-search-bar (output)="fetchTerm($event)"></app-search-bar>
-<app-result-list [results]="results"></app-result-list>
+<h1>EASYPEDIA</h1>
+<div id="search-bar-box">
+    <app-search-bar (output)="fetchTerm($event)"></app-search-bar>
+</div>
+<div id="results-box">
+    <app-result-list [results]="results"></app-result-list>
+</div>

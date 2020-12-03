@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./result-list.component.scss']
 })
 export class ResultListComponent implements OnInit {
+  wikipediaUrl: string = "https://en.wikipedia.org?curid="
   @Input() results;
   constructor() { }
 
