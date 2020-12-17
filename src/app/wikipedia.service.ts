@@ -1,5 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { pluck } from 'rxjs/operators';
+
+interface WikipediaResponse {
+
+}
+
+const observable = new Observable<WikipediaResponse>((observer) => {
+  observer.next(1)
+})
+
+observable.subscribe((value) => {
+  console.log(value);
+});
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +31,9 @@ export class WikipediaService {
 
   public search(term: string) {
     this.params.srsearch = term;
-
     return this.http.get(this.url, {params: this.params})
+      .pipe(
+        pluck('query', 'search')
+      )
   }
 }

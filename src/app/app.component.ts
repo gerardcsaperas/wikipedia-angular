@@ -13,9 +13,8 @@ export class AppComponent {
 
   results;
 
-  async fetchTerm(term: string) {
+  fetchTerm(term: string) {
     this.wikipedia.search(term).subscribe( response => {
-      console.log(response);
       this.results = response;
     });
   }
